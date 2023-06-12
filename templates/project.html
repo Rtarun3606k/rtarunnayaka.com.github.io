@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+
+
+
+{% block body%}
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
+
+<!-- {% for info in allinfo %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <img src={{info.link}} class="imgp" alt="problem">
+      <p> name : {{info.pname}}</p>
+      <p> language : {{info.language}}</p>
+      < <p> link : {{info.link}}</p> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- {% endfor %}  -->
+
+
+<div class="container text-center hidden">
+  <div class="row row-cols-2 hidden">
+    {% for info in allinfo %}
+    <a href="{{info.project_reach_link}}" target="_blank" class="a-project">
+      <div class="col hidden">
+        <H3 class="pro-slo">PROJECT - {{loop.index}}</H3>
+        <img src={{info.project_link}} class="imgp hidden" alt="problem">
+        <p class="p-of-project"> name : {{info.project_name}}</p>
+        <!-- <p> project_link : {{info.project_link}}</p> -->
+        <p class="p-of-project"> description : {{info.project_description}}</p>
+        <!-- <p> reach-link : {{info.project_reach_link}}</p> -->
+        <p class="p-of-project"> language : {{info.project_language}}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+
+<!-- {% for info in allinfo %}
+
+<H3 class="pro-slo">PROJECT - {{loop.index}}</H3>
+<p> name : {{info.project_name}}</p>
+        <p> project_link : {{info.project_link}}</p>
+        <p> project_description : {{info.project_description}}</p>
+        <p> reach-link : {{info.project_reach_link}}</p>
+        <p> project_language : {{info.project_language}}</p>
+
+<a href="/deletee/{{info.id}}" type="button" class="btn-delete">Delete</button></a>
+{% endfor %} -->
+
+
+
+
+
+
+{% endblock %}
